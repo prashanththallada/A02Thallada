@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GPA calculation</title>
+    <link rel="icon" href="../img/mypic.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+
+        <nav class="navbar" >
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar" style=" background-color: black;"></span>
+                          <span class="icon-bar" style=" background-color: black;"></span>
+                          <span class="icon-bar" style=" background-color: black;"></span>                      
+                        </button>
+                    <li><a href="#" class="navbar-brand" style=" color: black;">Prashanth</a> </li>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav"  >
+                    <li ><a href="../index.html" style=" color: black;">Home</a></li>
+                    <li ><a href="#" style=" color: black;">GPA calculator</a></li>
+                    <li ><a href="contact.html" style=" color: black;">Contact</a></li>
+                        </ul>
+                        </div>
+            </nav>
+
+            <header class="hearder-calc">
+                <h2>GPA calculator</h2>
+            </header>
+            <form>
+                <div class="container">
+                    <div class="form-row col-md-12">
+                        <div class="form-group col-md-3">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="fName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="lName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group col-md-3" id="sid">
+                                <label>Student ID</label>
+                                <input type="text" class="form-control" id="sId" placeholder="S123456">
+                         </div>
+                      
+                    </div>
+                    <!-- <br>
+                    <div class="form-row">
+                   
+                    <div> -->
+                    <div class="form-group Result"> 
+                        <label>Enter your Grades</label>
+                    </div>
+                   
+                    <div class="form-group form-row col-md-12">
+                        <div class="form-group col-md-2 colcal">
+                            <label>A</label>
+                            <input type="number" class="form-control" id="Agrade" placeholder="A level grades">
+                        </div>                    
+                        <div class="form-group col-md-2 colcal">
+                                <label>B</label>
+                                <input type="number" class="form-control" id="Bgrade" placeholder="B level grades">
+                        </div>
+                        <div class="form-group col-md-2 colcal">
+                            <label>C</label>
+                            <input type="number" class="form-control" id="Cgrade" placeholder="C level grades">
+                        </div>
+                        <div class="form-group col-md-2 colcal">
+                            <label>D</label>
+                            <input type="number" class="form-control" id="Dgrade" placeholder="D level grades">
+                        </div>
+                        <div class="form-group col-md-2 colcal">
+                            <label>F</label>
+                            <input type="number" class="form-control" id="Fgrade" placeholder="F level grades">
+                        </div>
+                    </div>
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-dark button1" onclick="fn()" style="position:absolute;left:30px;padding:5px">Get GPA</button>
+                    <br>
+                    <div class="form-group Result" item-width="100px">
+                            <label>Your GPA is given below:</label>
+                            <p class="alert alert-success" id="result" style="margin-left: 10px;"></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </form>
+            <footer style="background-color:ghostwhite; color:black">
+                    <p>Contact me at:S531506@nwmissouri.edu</p>                    
+            </footer>
+    </body>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../Calculation.js"></script>
+</body>
+</html>
+
+
+<!-- function fn(){
+    let k = document.getElementById('Agrade').value;
+    let k1 = document.getElementById('Bgrade').value;
+    let k2 = document.getElementById('Cgrade').value;
+    let k3 = document.getElementById('Dgrade').value;
+    let k4 = document.getElementById('Fgrade').value;
+    let name = document.getElementById('fName').value;
+    let lName = document.getElementById('lName').value;
+    let sId = document.getElementById('sId').value;
+    $('#result').css({ "display": "block" });
+    document.getElementById('result').innerHTML = input(name,lName,sId)+result(k,k1,k2,k3,k4);
+}
+  
+function input(name,lname,sid){
+    if(name === "" || lname === "" || sid === "")
+    return "No name given"+"<br>"+"Your GPA: "
+    else
+    let s = "name: "+name+" "+lName+"<br>"+"Student Id: "+sId+"<br>"+"Your GPA: ";
+}
+
+function result(j,j1,j2,j3,j4){
+    let m = parseInt(j);
+    let m1 = parseInt(j1);
+    let m2 = parseInt(j2);
+    let m3 = parseInt(j3);
+    let m4 = parseInt(j4);
+    if(j === "" || j1 === "" || j2 === "" || j3 === "" || j4 === "")
+    return 0;
+    else if((m+m1+m2+m3+m4)===0)
+    return 0+" you have entered all zeros";
+    else if(j<0 || j1<0 || j2<0 || j3<0 || j4<0)
+    return 0+" given input is in negative";
+    else if((m+m1+m2+m3+m4)>33)
+        return 0+" maximum courses shouldn't reach 33";   
+    else
+        return (m*4.0+m1*3.0+m2*2.0+m3*1.0)/(m+m1+m2+m3+m4);
+            
+} -->
